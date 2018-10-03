@@ -1,0 +1,34 @@
+#cellGrid {
+  width: 30px;
+  height: 30px;
+  border: 1px solid black;
+}
+
+#rowGrid {
+  width: 30px;
+  height: 30px;
+  display: inline-block;
+}
+
+#cellPal{
+  width: 40px;
+  height: 20px;
+  border: 1px solid black;
+}
+
+#rowPal {
+  width: 40px;
+  height: 20px;
+  display: inline-block;
+}
+
+#pickerDiv {
+  float: left;
+  margin: 0px 20px;
+}
+
+.coloring {
+  border-radius: 50%;
+  display: inline-block;
+}
+
