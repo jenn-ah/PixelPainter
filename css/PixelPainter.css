@@ -1,3 +1,35 @@
+body {
+  align-content: center;
+  background-image: url(/assets/kawaii.jpg);
+  background-blend-mode: lighten;
+  background-repeat: repeat;
+  /* background-color: white; */
+  
+}
+
+h1 {
+  
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-size: 50px;
+  text-align: center;
+  background-color: #ff1493;
+  background: rgba(255, 255, 255, 0.9);
+  opacity: 0.9;
+  
+}
+
+#bigDiv {
+  margin: 0 auto;
+  margin-top: 100px;
+  width: 525px;
+  height: 400px;
+  background-color: white;
+  background: rgba(255, 255, 255, 0.7);
+  border: 12px double #f9a5da;
+  padding-top: 70px;
+  padding-left: 20px;
+}
+
 #cellGrid {
   width: 30px;
   height: 30px;
@@ -31,4 +63,14 @@
   border-radius: 50%;
   display: inline-block;
 }
+
+.buttons {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 25px;
+  border: 1px solid black;
+  text-align: center;
+  margin: 5px;
+  width: auto;
+  border-radius: 50%;
+} 
 
