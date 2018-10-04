@@ -15,20 +15,20 @@ function pixPaint(width, height) {
 
   for (let i = 0; i < width; i++) {
     let row = document.createElement('div');
-    row.id = 'rowGrid';
-    row.className = 'gridding';
-    getPix.appendChild(row);//fix append to build cells before sent to parent div
+      row.id = 'rowGrid';
+      row.className = 'gridding';
+      getPix.appendChild(row);//fix append to build cells before sent to parent div
     for (let j = 0; j < height; j++) {
       let cell = document.createElement('div');
       cell.id = 'cellGrid';
       cell.className = 'gridding';
-      cell.addEventListener('mousedown', function(e){
+      cell.addEventListener('mousedown', function (e) {
         mouseMove = true;
         // console.log('mouseMove - true down', mouseMove);
         e.target.style.backgroundColor = currentColor;
       });
-      cell.addEventListener('mouseover', function(e){
-        if (mouseMove === true){
+      cell.addEventListener('mouseover', function (e) {
+        if (mouseMove === true) {
           e.target.style.backgroundColor = currentColor;
         } else {
           return false;
@@ -36,48 +36,36 @@ function pixPaint(width, height) {
         // console.log('mouseMove - true over', mouseMove);
         // e.target.style.backgroundColor = currentColor;
       });
-      cell.addEventListener('mouseup', function(){
+      cell.addEventListener('mouseup', function () {
         mouseMove = false;
-        // console.log('mouseMove - false up', mouseMove);
-
       });
-      // cell.addEventListener('click', function () {
-      //   cell.style.backgroundColor = currentColor;
-      // });
-      // cell.addEventListener('mouseover', function () {
-         // if (mouseover === true){
-        // } else {
-       //   cell.style.backgroundColor = '';
-       // }
-      // }
-      // );
       row.appendChild(cell);//fix append to build cells before sent to parent div
     }
   }
 
   let buttonsDiv = document.createElement('div');
-  buttonsDiv.id = 'buttonBox';
-  colorPal.appendChild(buttonsDiv);
+    buttonsDiv.id = 'buttonBox';
+    colorPal.appendChild(buttonsDiv);
 
   let clearButton = document.createElement('div');
-  clearButton.innerHTML = 'clear';
-  clearButton.className = 'buttons';
-  clearButton.addEventListener('click', function () {
-    for (let i = 0; i < gridBox.length; i++) {
+    clearButton.innerHTML = 'clear';
+    clearButton.className = 'buttons';
+    clearButton.addEventListener('click', function () {
+      for (let i = 0; i < gridBox.length; i++) {
       gridBox[i].style.backgroundColor = 'transparent';
-    };
-  });
-  buttonsDiv.appendChild(clearButton);
+      };
+    });
+    buttonsDiv.appendChild(clearButton);
 
   let eraseButton = document.createElement('div');
-  eraseButton.innerHTML = 'erase';
-  eraseButton.id = 'eraseMe';
-  eraseButton.className = 'buttons';
-  eraseButton.addEventListener('click', function () {
-      currentColor = 'transparent';
-    }
-   );
-  buttonsDiv.appendChild(eraseButton);
+    eraseButton.innerHTML = 'erase';
+    eraseButton.id = 'eraseMe';
+    eraseButton.className = 'buttons';
+    eraseButton.addEventListener('click', function () {
+    currentColor = 'transparent';
+      }
+    );
+    buttonsDiv.appendChild(eraseButton);
 
 
   function colorPalette() {
@@ -86,7 +74,7 @@ function pixPaint(width, height) {
       pRow.id = 'rowPal';
       pRow.className = 'coloring';
       pRow.addEventListener('click', function (e) {
-          currentColor = e.target.style.backgroundColor;
+        currentColor = e.target.style.backgroundColor;
       });
       colorPal.appendChild(pRow); //insert in code later
       for (let j = 0; j < 8; j++) {
@@ -95,7 +83,7 @@ function pixPaint(width, height) {
         pCell.className = 'coloring';
         pCell.addEventListener('click', function (e) {
           currentColor = e.target.style.backgroundColor;
-      });
+        });
         pRow.appendChild(pCell); //fix append to build cells before sent to parent div
       }
     }

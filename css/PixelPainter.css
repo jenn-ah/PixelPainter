@@ -43,15 +43,17 @@ h1 {
 }
 
 #cellPal{
-  width: 40px;
-  height: 20px;
-  border: 1px solid black;
+  width: 20px;
+  height: 30px;
+  border: 3px solid #f9a5da;
+  display: inline-block;
 }
 
 #rowPal {
-  width: 40px;
-  height: 20px;
-  display: inline-block;
+  width: 20px;
+  height: 30px;
+  display: hidden;
+  border: 3px solid #f9a5da;
 }
 
 #pickerDiv {
