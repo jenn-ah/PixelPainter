@@ -5,7 +5,7 @@ function pixPaint(width, height) {
   getPix.id = 'bigDiv';
   let colorPal = document.createElement('div');
   colorPal.id = 'pickerDiv';
-  getPix.appendChild(colorPal); //fix append
+  getPix.appendChild(colorPal); //fix appends
 
   const colorArr = ['#ff0000', '#ff8000', '#ffff00', '#00ff00', '#7d7d90', '#0080ff', '#4000ff', '#bf00ff', '#ff99cc', '#fcf182', '#3778fb', '#ffff33', '#33ff33', '#ff1493', '#cf8dff', '#37fbda', '41b9e3'];
   let colorsClass = document.getElementsByClassName('coloring');
@@ -24,7 +24,6 @@ function pixPaint(width, height) {
       cell.className = 'gridding';
       cell.addEventListener('mousedown', function (e) {
         mouseMove = true;
-        // console.log('mouseMove - true down', mouseMove);
         e.target.style.backgroundColor = currentColor;
       });
       cell.addEventListener('mouseover', function (e) {
@@ -33,8 +32,6 @@ function pixPaint(width, height) {
         } else {
           return false;
         }
-        // console.log('mouseMove - true over', mouseMove);
-        // e.target.style.backgroundColor = currentColor;
       });
       cell.addEventListener('mouseup', function () {
         mouseMove = false;
@@ -45,7 +42,7 @@ function pixPaint(width, height) {
 
   let buttonsDiv = document.createElement('div');
     buttonsDiv.id = 'buttonBox';
-    colorPal.appendChild(buttonsDiv);
+    colorPal.appendChild(buttonsDiv); //manage appends
 
   let clearButton = document.createElement('div');
     clearButton.innerHTML = 'clear';
@@ -55,7 +52,7 @@ function pixPaint(width, height) {
       gridBox[i].style.backgroundColor = 'transparent';
       };
     });
-    buttonsDiv.appendChild(clearButton);
+    buttonsDiv.appendChild(clearButton); //manage appends
 
   let eraseButton = document.createElement('div');
     eraseButton.innerHTML = 'erase';
@@ -65,7 +62,7 @@ function pixPaint(width, height) {
     currentColor = 'transparent';
       }
     );
-    buttonsDiv.appendChild(eraseButton);
+    buttonsDiv.appendChild(eraseButton);//manage appends
 
 
   function colorPalette() {
@@ -76,7 +73,7 @@ function pixPaint(width, height) {
       pRow.addEventListener('click', function (e) {
         currentColor = e.target.style.backgroundColor;
       });
-      colorPal.appendChild(pRow); //insert in code later
+      colorPal.appendChild(pRow); //manage appends
       for (let j = 0; j < 8; j++) {
         let pCell = document.createElement('div');
         pCell.id = 'cellPal';
@@ -84,7 +81,7 @@ function pixPaint(width, height) {
         pCell.addEventListener('click', function (e) {
           currentColor = e.target.style.backgroundColor;
         });
-        pRow.appendChild(pCell); //fix append to build cells before sent to parent div
+        pRow.appendChild(pCell); //manage appends
       }
     }
   }
@@ -95,8 +92,9 @@ function pixPaint(width, height) {
       colorsClass[i].style.backgroundColor = colorArr[i];
     }
   }
-  colorBox();
+  colorBox(); 
 
+  //iife
 
 };
 pixPaint(10, 10);
